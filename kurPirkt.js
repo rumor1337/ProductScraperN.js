@@ -13,16 +13,18 @@ class kurPirkt {
 
     ensurePages(page) {
         switch(page) {
-            case undefined || null || 1:
-                this.url = `https://www.kurpirkt.lv/cena.php?q=${requestQuery}`;
+            case undefined || null || 0 || 1:
+                this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
                 break;
             default:
-                this.url = `https://www.kurpirkt.lv/cena.php?q=${requestQuery}&page=${page}`;   
+                this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}&page=${this.page}`;
+                break;
         }
     }
 
-    doRequest() {
-        const $ = cheerio.fromURL(url);
+    async doRequest() {
+        this.ensurePages(this.page);
+        const $ = await cheerio.fromURL(this.url);
         let products = $('div[class=precebloks]').get().map(ele => {
 
             // mainigie 
@@ -36,15 +38,19 @@ class kurPirkt {
             // genuinely briesmigi bet strada
             var campaignimage = $(ele).find('.resimg.campaignimage').attr('src');
 
+            var redirectLink = $(ele).find('a[target=_blank]').attr('href');
+
             return {
                 title: $(ele).find('div[class=title]').text(),
                 price: ((price != '') ? price : campaignprice),
                 seller: ((seller != '') ? seller : campaignseller),
-                image: 'kurpirkt.lv' + ((image != undefined) ? image : campaignimage)
+                image: 'kurpirkt.lv' + ((image != undefined) ? image : campaignimage),
+                redirectLink: `kurpirkt.lv${redirectLink}`
             }
         });
+        console.log(products); // temp
     }
 
 }
 
-// console.log(products);
+export default kurPirkt
