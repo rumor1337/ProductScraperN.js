@@ -1,1 +1,1 @@
-python implementacija prod scraper
+node.js implementacija prod scraper
