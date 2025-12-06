@@ -10,10 +10,13 @@ const retrievedData = await db.ref(searchQuery).get();
 
 // pretty much it for caching 00:39 07.12.25
 
-if(retrievedData.exists()) {
+async function handleData() {
+
+  if(retrievedData.exists()) {
     // self explanatory
-    console.log(retrievedData.val());
-} else {
+    console.log(`[${searchQuery}] read data`);
+    return retrievedData.val();
+  } else {
     // all scraper calls
     var salidziniScraper = new Salidzini(searchQuery, 1);
     var salidziniResults: any[] = await salidziniScraper.doRequest();
@@ -25,5 +28,10 @@ if(retrievedData.exists()) {
 
     // set and return the scraped data
     await db.ref(searchQuery).set(allProducts);
-    console.log(allProducts);
+    console.log(`[${searchQuery}] pushed data to .db`);
+    return allProducts;
 }
+
+}
+
+console.log(handleData());

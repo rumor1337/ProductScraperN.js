@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* real */
+
+body {
+	background-image: url("/images/simpleshinybg.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Noto Sans;
+    background-color: rgb(24,24,24);
+}
+
+.headerText {
+    font-size: 32px;
+  	background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  	background-size: 200% auto;
+    color: white;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: gradient-flow 5s linear infinite;
+	display: inline-block;
+	font-weight: 800;
+}
+
+.mainContent {
+	margin-top: 1.5rem;
+	margin-right: 3rem;
+	margin-left: 3rem;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	padding-top: 2.5rem;
+	margin-right: 3rem;
+	margin-left: 3rem;
+	justify-content: space-between
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.settings {
+	font-size: 24px;
+	color: white;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.settings:hover {
+	color: rgb(169,169,169);
+	transform: rotate(180deg);
+}
+
+.headContent {
+	font-size: 18px;
+	color: white;
+}
+
+.modal {
+	z-index: 2;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 24px;
+	padding: 1.5rem;
+	border-radius: .75rem;
+	background-color: rgb(48,48,48,0.33);
+	backdrop-filter: blur(10px);
+	height: 50%;
+	width: 25%;
+}
+
+.modalTop {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modalHead {
+	color: white;
+	font-weight: 800;
+}
+
+.closeBtn {
+	color: red;
+	cursor: pointer;
+}
+
+.closeBtn:hover {
+	color: darkred;
+}
+
+.footer {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	margin-bottom: 1.5rem;
+	left: 50%;
+	transform: translate(-50%);
+	backdrop-filter: blur(10px);
+}
+
+.socials a {
+	font-size: 18px;
+	color: white;
+	margin-right: .75rem;
+	text-decoration: none;
+	transition: .2s;
+}
+
+.socials a:hover {
+	color: rgb(169,169,169);
+	font-size: 24px;
+}
