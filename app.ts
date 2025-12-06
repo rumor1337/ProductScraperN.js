@@ -1,6 +1,16 @@
 import kurPirkt from './kurPirkt.ts';
 import Salidzini from './salidzini.ts';
 import { AceBase } from 'acebase';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// express
+import express from 'express';
+const app = express()
+const port = 8080
 
 const db = new AceBase('scraperData'); 
 
@@ -35,3 +45,8 @@ async function handleData() {
 }
 
 console.log(handleData());
+
+app.use(express.static(join(__dirname, 'public')));
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+})

@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scraper</title>
+    <title>nezinu</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="navbar">
-        <h1 class="headerText">scrape</h1>
-        <a class="settings">
-            <i class="fa-solid fa-gear"></i>
-        </a>
+        <h1 class="headerText">nezinu</h1>
+        <div class="search">
+            <!-- awful -->
+            <span id="queryText">query</span><span>@</span><span id="whereText">nezinu</span><span>:</span><span id="symbolColor">~</span><span>$</span>
+            <input type="text" name="searchBox" class="searchBox">
+
+            <button class="searchButton">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
     </div>
     <div class="mainContent">
-        <div class="headContent">
-            <h2>Main content</h2>
-            <p>text</p>
-        </div>
         <div class="footer">
             <div class="socials">
                 <a class="gh" href="https://github.com/rumor1337">
@@ -33,19 +36,5 @@
             </div>
         </div>
     </div>
-    <!-- modal
-    <div class="modal">
-        <div class="modalTop">
-            <h1 class="modalHead">Settings</h1>
-            <a class="closeBtn">
-                <i class="fa-solid fa-circle-xmark"></i>
-            </a>
-        </div>
-        <div class="modalMain">
-            <hr>
-            <label for="apikey">api key:</label>
-            <input type="text" name="apikey" id="">
-        </div>
-    </div> -->
 </body>
 </html>
