@@ -5,7 +5,6 @@ import SortUtil from './util/SortUtil.ts';
 class app {
 
     public express = new Express(8080);
-    private scraper = new Scraper();
     public sortUtil = new SortUtil();
 
     constructor() {

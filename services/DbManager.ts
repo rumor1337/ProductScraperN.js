@@ -17,7 +17,7 @@ class DbManager {
             this.logger.info(`[${query}] retrieved data`);
             return retrievedData;
         } catch(error: any) {
-            this.logger.error(`[!!] Caught an exception at retrieveData in DbManager. ${error.message}`);
+            this.logger.error(`Caught an exception at retrieveData in DbManager. ${error.message}`);
         }
     }
 
@@ -26,7 +26,7 @@ class DbManager {
             await this.db.ref(query.toLowerCase()).set(data);
             this.logger.info(`[${query}] saved data`);
         } catch(error: any) {
-            this.logger.warn(`[!!] Caught an exception at saveData in DbManager. ${error.message}`);
+            this.logger.warn(`Caught an exception at saveData in DbManager. ${error.message}`);
             return;
         }
     }

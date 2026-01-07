@@ -49,7 +49,7 @@ class Salidzini {
             }
         });
         if(products.length === 0) {
-            this.logger.warn('[!] Ratelimited');
+            this.logger.warn('Ratelimited');
             return [];
         }
         return products;

@@ -23,7 +23,7 @@ class Scraper {
 
             return allProducts;
         } catch(error: any) {
-            this.logger.error(`[!!] Caught an exception at scrape in Scraper ${error.message}`);
+            this.logger.error(`Caught an exception at scrape in Scraper ${error.message}`);
         }
 
     }

@@ -53,7 +53,7 @@ class kurPirkt {
             }
         });
         if(products.length === 0) {
-            this.logger.warn('[!] ratelimited');
+            this.logger.warn('Ratelimited');
             return [];
         }
         return products;

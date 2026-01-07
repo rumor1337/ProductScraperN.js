@@ -26,10 +26,10 @@ class Express {
         try {
             this.app.use(express.static(join(__dirname, '../../public')));
             this.app.listen(this.port, () => {
-                this.logger.info(`[!] Listening on port ${this.port}`);
+                this.logger.info(`Listening on port ${this.port}`);
             });
         } catch(error: any) {
-            this.logger.error(`[!!] Caught an exception at startExpress in express: ${error.message}`);
+            this.logger.error(`Caught an exception at startExpress in express: ${error.message}`);
         }
     }
 
