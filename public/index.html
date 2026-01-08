@@ -10,68 +10,28 @@
 </head>
 <body>
     <div class="mainContent">
-        <div class="navbar">
-            <span class="title">
-                > main page
-            </span>
+
+        <div class="tuiContainer">
+            <fieldset class="tuiElement">
+                <legend class="tuiLegend">info</legend>
+                <h1 class="title">Welcome to this generic scraping tool</h1>
+                
+                <p class="text">
+                    This tool is built to provide uninterrupted product searching on Latvian internet marketplaces.
+                </p>
+                <p class="text">
+                    You can view this project on Github: <a class="hyperlink" href="https://github.com/rumor1337/GenericProductScraper">GenericProductScraper</a>
+                </p>
+
+            </fieldset>
+            <fieldset class="tuiElement">
+                <legend class="tuiLegend">whatever</legend>
+            </fieldset>
+            <fieldset class="tuiElement">
+                <legend class="tuiLegend">3</legend>
+            </fieldset>
         </div>
 
-        <div class="terminalWindow">
-
-            <div class="searchEl" id="welcomeCommand">
-                <span class="preInput" for="terminalInput">
-                <span class="username">user</span>@<span class="hostname">scraper</span>:~$</span>
-                <span class="command">welcome</span>
-            </div>
-
-            <!-- operations -->
-            <div class="searchEl">
-                <span class="command">Welcome to this generic scraping tool</span>
-            </div>
-            <div class="searchEl">
-                &emsp;&emsp;<span class="command">why? -> because latvian search websites, that provide you with products from multiple websites suck (pretty straightforward)</span>
-            </div>
-            <div class="searchEl">
-                &emsp;&emsp;<span class="command">what is this project built on? -> typescript for the backend, cheerio for scraping and frontend is pure html/css</span>
-            </div>
-
-            <!-- usage and help start -->
-            <div class="searchEl">
-                <span class="preInput" for="terminalInput">
-                <span class="username">user</span>@<span class="hostname">scraper</span>:~$</span>
-                <span class="command">search --help</span>
-            </div>
-            <div class="searchEl">
-                <span class="command">Usage:</span>
-            </div>
-            <div class="searchEl">
-                <!-- drausmigi -->
-                <span class="command">&emsp;&emsp;input your query into the box next to<br>&emsp;&emsp;the command "search -q"<br>&emsp;&emsp;on the search.html page which you can click on above.</span>
-            </div>
-            
-
-            <form class="searchEl" method="get" action="api/search">
-                <label class="preInput" for="terminalInput">
-                    <span class="username">user</span>@<span class="hostname">scraper</span>:~$
-                </label>
-                <span class="command">search -q </span>
-                <input type="text" name="q" id="terminalInput">
-            </form>
-
-            <div class="products">
-
-                <div class="product">
-                    <h1 id="productTitle">Title</h1>
-                    <a id="productLink" href="productLink">
-                        <img href="link" id="productImage" src="http://kurpirkt.lv/i/8/5/rakstamgalds_nore_a6_labas_puses_ozola_krasas_1160596725.jpg" alt="title">                    </a>
-                    </a>
-                    <span id="productPrice">price</span>
-                </div>
-
-            </div>
-
-
-        </div>
         <div class="footer">
             <div class="socials">
                 <a class="gh" href="https://github.com/rumor1337">

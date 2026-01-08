@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -54,129 +54,51 @@ table {
 body {
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-family: Ubuntu;
+	font-family: JetBrains Mono;
     background-color: rgb(245,245,245);
 	overflow: hidden;
 }
 
-.navbar {
-	display: flex;
-	color: white;
-	background-color: rgb(36,36,36);
-	align-items: center;
-	justify-content: space-between;
-	padding: .5rem;
-}
-
 .mainContent {
-	margin-top: 1rem;
-	margin-left: 2rem;
-	margin-right: 2rem;
-}
-
-#welcome {
-	padding-top: .75rem;
-	width: 100%;
-}
-
-
-.searchEl {
-	padding-bottom: .25rem;
-	display: inline-flex;
-	background-color: rgb(48,48,48);
-	width: 100%;
-	overflow: hidden;
-	align-items: center;
-}
-
-.preInput {
-	color: rgb(255, 255, 255);
-	margin-right: .5rem;
-}
-
-.username {
-	font-weight: 600;
-	color: rgb(149, 126, 255);
-}
-
-.hostname {
-	font-weight: 600;
-	color: rgb(201, 187, 0);
-}
-
-.terminalWindow {
-	padding-left: .25rem;
-	background-color: rgb(48,48,48);
-	height: 100vh;
-}
-
-.command {
-	color: rgb(200, 200, 200);
-	margin-right: .25rem;
-}
-
-#terminalInput {
-	font-size: 16px;
-	color: white;
-	caret-color: rgb(245,245,245);
-	background: transparent;
-	outline: none;
-	border-style: none;
-	width: 80%;
-}
-
-.searchBox {
-	color: white;
-	background: transparent;
-	border-radius: .5rem;
-	padding: .33rem;
-	border-style: none;
-	margin-right: .25rem;
-	outline: none;
-}
-
-.products {
-	display: block;
-	flex-direction: column;
-	margin-top: 1.25rem;
-	margin-left: 1.25rem;
-}
-
-.product {
-	padding: .5rem;
-	background-color: rgb(56,56,56);
-	border-radius: .25rem;
-	max-width: 240px;
-	max-height: 320px;
-}
-
-#productTitle {
-	color: white;
-	font-size: 18px;
-	font-weight: 800;
-	margin-bottom: .25rem;
-}
-
-#productImage {
-	display: block;
-	/* border-style: solid; */
-	/* border-width: 3px; */
-	max-width: 180px;
-	border-radius: .15rem;
-	/* border-color: black; */
 	padding: .75rem;
+}
+
+.tuiContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 0.33fr 1fr;
+	gap: 1rem;
+
+	height: calc(100vh - 1.5rem);
+}
+
+.tuiElement {
+	border-radius: .25rem;
+	border-style: solid;
+	border-width: 3px;
+
+	padding: .75rem;
+	overflow: auto;
+}
+
+.tuiLegend {
+	padding-left: .3rem;
+	padding-right: .3rem;
+}
+
+.title {
+	color: rgb(24,24,24);
+	font-weight: 700;
+	margin-bottom: .5rem;
+}
+
+.text {
+	color: rgb(36,36,36);
 	margin-bottom: .25rem;
 }
 
-#productLink > a {
-	display: inline;
-	text-decoration: none;
-}
-
-#productPrice {
-	color: white;
-	font-size: 16px;
-
+.hyperlink {
+	color: rgb(57, 57, 57);
 }
 
 .footer {
@@ -186,18 +108,17 @@ body {
 	margin-bottom: 1.5rem;
 	left: 50%;
 	transform: translate(-50%);
-	backdrop-filter: blur(10px);
 }
 
 .socials a {
 	font-size: 18px;
-	color: rgb(255, 255, 255);
+	color: rgb(25, 25, 25);
 	margin-right: .75rem;
 	text-decoration: none;
 	transition: .2s;
 }
 
 .socials a:hover {
-	color: rgb(180, 180, 180);
+	color: rgb(57, 57, 57);
 	font-size: 24px;
 }
