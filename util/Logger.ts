@@ -6,7 +6,7 @@ class Logger {
 
     public time() {
         const date: Date = new Date();
-        return format(date, 'hh:mm:ss');
+        return format(date, 'HH:mm:ss');
     }
 
     public info(text: any) {

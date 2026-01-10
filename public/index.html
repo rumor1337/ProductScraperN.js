@@ -37,10 +37,26 @@
                 <legend class="tuiLegend">search</legend>
 
                 <form class="searchForm" action="">
-                    <input type="text" placeholder="product.." name="product" class="productInput">
-                    <button class="submitBtn" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
+                    <div class="searchBox">
+                        <input type="text" required placeholder="product.." name="product" class="productInput">
+                        <button class="submitBtn" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <label class="labelText" for="sort">sort direction</label>
+                    <select class="sortDirection" name="sort">
+                        <option value="ascending">ascending</option>
+                        <option value="descending">descending</option>
+                    </select>
+                    <label class="labelText" for="websiteFilter">filter by website?</label>
+                    <div class="websiteFilter">
+                        <input type="radio" id="kurpirkt" name="website" value="kurpirkt">
+                        <label for="kurpirkt">kurpirkt.lv</label>
+                        <input type="radio" id="salidzini" name="website" value="salidzini">
+                        <label for="kurpirkt">salidzini.lv</label>
+                        <input type="radio" id="none" name="website" value="none" checked>
+                        <label for="kurpirkt">none</label>
+                    </div>
                 </form>
 
             </fieldset>
@@ -48,7 +64,7 @@
                 <legend class="tuiLegend">results</legend>
             </fieldset>
             <fieldset class="tuiElement tuiFoot">
-                <legend class="tuiLegend">foot</legend>
+                <legend class="tuiLegend">footer</legend>
 
                 <div class="footer">
                     <div class="socials">
