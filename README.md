@@ -45,3 +45,9 @@ This project was created partly for school and partly out of frustration. Existi
 - When all that is ensured, run `node app.ts` in the working directory
 - Everything else is outlined in the browser;
 - To access the front-end, if running locally, access `localhost:8080`
+
+---
+
+## LICENSE
+
+Licensed under GPL-3.0
