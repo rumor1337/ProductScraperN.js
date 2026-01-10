@@ -1,18 +1,12 @@
 import chalk from 'chalk';
 import * as fs from 'fs';
+import { format } from 'date-fns';
 
 class Logger {
 
     public time() {
-        
-        const date = new Date();
-
-        const hours = String(date.getHours());
-        const minutes = String(date.getMinutes());
-        const seconds = String(date.getSeconds());
-
-        return `${hours}:${minutes}:${seconds}`;
-
+        const date: Date = new Date();
+        return format(date, 'hh:mm:ss');
     }
 
     public info(text: any) {
@@ -37,7 +31,7 @@ class Logger {
         try {
             fs.appendFileSync(path, data);
         } catch(error: any) {
-            this.error(`An error occured in logger at log: ${error}`);
+            this.error(`An error occured in Logger at log ${error}`);
         }
 
     }

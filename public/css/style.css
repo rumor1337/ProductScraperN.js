@@ -60,15 +60,15 @@ body {
 }
 
 .mainContent {
+	height: 100vh;
 	padding: .75rem;
 }
 
 .tuiContainer {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 0.33fr 1fr;
+	grid-template-columns: 1.25fr 0.75fr;
+	grid-template-rows: 0.25fr 1fr 0.10fr;
 	gap: 1rem;
-
 	height: calc(100vh - 1.5rem);
 }
 
@@ -79,6 +79,10 @@ body {
 
 	padding: .75rem;
 	overflow: auto;
+}
+
+.tuiMain, .tuiFoot {
+    grid-column: span 2;
 }
 
 .tuiLegend {
@@ -92,33 +96,66 @@ body {
 	margin-bottom: .5rem;
 }
 
+.bigText {
+	color: rgb(36,36,36);
+	margin-bottom: .5rem;
+}
+
+.smallText {
+	color: rgb(48,48,48);
+	margin-bottom: .2rem;
+	font-weight: 200;
+}
+
 .text {
 	color: rgb(36,36,36);
-	margin-bottom: .25rem;
+	margin-bottom: .2rem;
 }
 
 .hyperlink {
 	color: rgb(57, 57, 57);
 }
 
-.footer {
-	position: fixed;
+.searchForm {
 	display: flex;
-	bottom: 0;
-	margin-bottom: 1.5rem;
-	left: 50%;
-	transform: translate(-50%);
+}
+
+.productInput {
+	background-color: rgb(245,245,245);
+	border-style: solid;
+	/* border-right: none; */
+	width: 100%;
+	border-color: rgb(24,24,24);
+	padding: .5rem;
+}
+
+.submitBtn {
+	padding: .5rem;
+	border-style: solid;
+	border-left: none;
+	border-color: rgb(24,24,24);
+	background: rgb(245,245,245);
+	cursor: pointer;
+}
+
+.tuiFoot {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .socials a {
-	font-size: 18px;
+	
+	font-size: 20px;
 	color: rgb(25, 25, 25);
 	margin-right: .75rem;
 	text-decoration: none;
 	transition: .2s;
+	align-items: center;
+	
 }
 
 .socials a:hover {
 	color: rgb(57, 57, 57);
-	font-size: 24px;
+	font-size: 22px;
 }

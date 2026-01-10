@@ -1,4 +1,3 @@
-import Scraper from './services/Scraper.ts';
 import Express from './services/express/Express.ts';
 import SortUtil from './util/SortUtil.ts';
 
