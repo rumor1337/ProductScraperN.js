@@ -4,6 +4,7 @@ import { dirname, join } from 'path';
 import DbManager from '../DbManager.ts';
 import Scraper from '../Scraper.ts';
 import Logger from '../../util/Logger.ts';
+import SortUtil from '../../util/SortUtil.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,6 +14,7 @@ class Express {
     private app = express();
     private port : Number = 8080;
     private dbManager = new DbManager();
+    private sortUtil = new SortUtil();
     private scraper = new Scraper();
 
     private logger;
@@ -38,15 +40,18 @@ class Express {
             try {
 
                 const searchQuery = String (req.query.q);
+                const sortDirection = String (req.query.sort);
 
                 const cache = await this.dbManager.retrieveData(searchQuery);
-                // slikta implementacija whatever es nevaru returna nodefinet type :(
-                if(cache!.exists()) return res.json(cache!.val());
+
+                if(cache != null && cache.exists()) return res.json(this.sortUtil.sort(cache.val()!, sortDirection));
 
                 var scrapedData = await this.scraper.scrape(searchQuery);
                 this.dbManager.saveData(searchQuery, scrapedData!);
 
-                return res.json(scrapedData);
+                const sortedData = this.sortUtil.sort(scrapedData, sortDirection);
+                return res.json(sortedData);
+
             } catch(error: any) {
                 this.logger.error(`Caught an exception at setRoutes in express: ${error.message}`);
                 return res.send("An error has occured, if this does not resolve itself in a short while, please make an issue on the Github page.");

@@ -78,11 +78,16 @@ body {
 	border-width: 3px;
 
 	padding: .75rem;
-	overflow: auto;
+	overflow: visible;
 }
 
 .tuiMain, .tuiFoot {
     grid-column: span 2;
+}
+
+.tuiMain {
+	overflow-y: auto;
+	padding: 1.5rem;
 }
 
 .tuiLegend {
@@ -156,6 +161,56 @@ body {
 	border-width: 2px;
 	border-color: rgb(24,24,24);
 	background: rgb(245,245,245);
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+	width: 100%;
+}
+
+#productCard {
+    width: 100%;
+    max-width: 240px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productName {
+	font-size: 14px;
+	margin-bottom: 1rem;
+}
+
+.productLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 0.5rem;
+}
+
+.productImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.productBottom {
+    margin-top: auto;
+}
+
+.productPrice {
+    margin-top: .25rem;
+    color: rgb(36,36,36);
+    font-weight: 600;
+}
+
+.productSeller {
+    font-size: 12px;
+    color: rgb(57,57,57);
+    margin-top: .1rem;
 }
 
 .tuiFoot {

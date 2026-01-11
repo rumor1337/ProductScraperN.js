@@ -48,7 +48,7 @@ class kurPirkt {
                 title: $(ele).find('div[class=title]').text(),
                 price: ((price != '') ? parseFloat(price) : parseFloat(campaignprice)),
                 seller: ((seller != '') ? seller : campaignseller),
-                image: 'kurpirkt.lv' + ((image != undefined) ? image : campaignimage),
+                image: 'https://kurpirkt.lv' + ((image != undefined) ? image : campaignimage),
                 redirectLink: `https://kurpirkt.lv${redirectLink}`,
             }
         });

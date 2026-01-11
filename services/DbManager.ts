@@ -18,6 +18,7 @@ class DbManager {
             return retrievedData;
         } catch(error: any) {
             this.logger.error(`Caught an exception at retrieveData in DbManager. ${error.message}`);
+            return null;
         }
     }
 
@@ -27,7 +28,7 @@ class DbManager {
             this.logger.info(`[${query}] saved data`);
         } catch(error: any) {
             this.logger.warn(`Caught an exception at saveData in DbManager. ${error.message}`);
-            return;
+            return null;
         }
     }
 
